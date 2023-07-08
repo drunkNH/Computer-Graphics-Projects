@@ -1,0 +1,50 @@
+<html lang="en">
+    <head>
+        <meta charset="utf-8"/>
+        <title>Three.js World</title>
+    </head>
+    <style>
+        html, body {
+           margin: 0;
+           height: 100%;
+        }
+        #c {
+           width: 100%;
+           height: 50%;
+           display: block;
+        }
+        .split {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+        }
+        .split>div {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+    <body>
+        <canvas id="c"></canvas>
+        <div class="split">
+            <div id="view1" tabindex="1"></div>
+            <div id="view2" tabindex="2"></div>
+            <div id="view3" tabindex="3"></div>
+            <div id="view4" tabindex="4"></div>
+            <div id="view5" tabindex="5"></div>
+         </div>
+         <script async src="https://unpkg.com/es-module-shims@1.6.3/dist/es-module-shims.js"></script>
+
+<script type="importmap">
+  {
+    "imports": {
+      "three": "https://unpkg.com/three@0.153.0/build/three.module.js",
+      "three/addons/": "https://unpkg.com/three@0.153.0/examples/jsm/"
+    }
+  }
+</script>
+        <script type="module" src="./main.js"></script>
+    </body>
+</html>
