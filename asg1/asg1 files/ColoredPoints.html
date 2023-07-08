@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Change a point color</title>
+  </head>
+
+  <body onload="main()">
+    <canvas id="webgl" width="400" height="400">
+    Please use a browser that supports "canvas"
+    </canvas>
+    <img src="picture.png" width="400" height="400">
+    <br>
+    <button type="button" id="clearButton">Clear Canvas</button>
+    <button type="button" id="drawButton">Draw Picture</button>
+    <br><br>
+    Quick Color Buttons
+    <br>
+    <button type="button" id="red">Red</button>
+    <button type="button" id="green">Green</button>
+    <button type="button" id="blue">Blue</button>
+    <button type="button" id="black">Eraser (Black)</button>
+    <br><br>
+    Shape Selector
+    <br>
+    <button type="button" id="pointButton">Point</button>
+    <button type="button" id="triangleButton">Triangle</button>
+    <button type="button" id="CircleButton">Circle</button>
+
+
+    <br><br>
+    Brush Modifiers
+    <br>
+    Red <input type="range" min="0" max="100" value="100" class="slider" id="redSlide">
+    Green <input type="range" min="0" max="100" value="100" class="slider" id="greenSlide">
+    Blue <input type="range" min="0" max="100" value="100" class="slider" id="blueSlide">
+    <br>
+    Size <input type="range" min="5" max="40" value="0" class="slider" id="sizeSlide">
+    (Circles) Segment Count <input type="range" min="5" max="15" value="5" class="slider" id="segSlide">
+    
+    <!--Awesome buttons-->
+    <br><br>
+    Awesomeness! (Basic Animation Maker)
+    <br>
+    <button type="button" id="saveFrame"> Save Frame</button>
+    <button type="button" id="playFrames">Animate Frames</button>
+    <button type="button" id="clearFrames">Clear Frames</button>
+    <br>
+    Animation Speed <input type="range" min="1" max="10" value="2" class="slider" id="FPS">
+    <br>
+    <b>Instructions</b><br>
+    [<i>Save Frame</i>] will save the current canvas as a frame to be used in an animation.<br>
+    [<i>Animate Frames</i>] will animate any frames that has been saved.<br>
+    [<i>Clear Frames</i>] will clear <b>ALL</b> saved frames.<br>
+    [<i>Animation Speed</i>] will set the speed of the animation.<br>
+    See <i>Awesome_Demo.mp4</i> for an animation demo
+
+    <script src="../lib/webgl-utils.js"></script>
+    <script src="../lib/webgl-debug.js"></script>
+    <script src="../lib/cuon-utils.js"></script>
+    <script src="Point.js"></script>
+    <script src="Triangle.js"></script>
+    <script src="Circle.js"></script>
+    <script src="ColoredPoints.js"></script>
+    <script src="Picture.js"></script>
+  </body>
+</html>
