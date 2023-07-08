@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Blocky Animal</title>
+  </head>
+  <style>
+    #left {
+      float: left;
+      width: 425px;
+    }
+    #right {
+      width: 100%;
+    }
+
+  </style>
+  <body onload="main()">
+    <div id="container">
+      <div id="left">
+        <canvas id="webgl" width="400" height="400">
+          Please use a browser that supports "canvas"
+          </canvas>
+          <p id="numdot"> XXX </p>
+  
+          <b>Idle Animation / Look Around</b>
+          <button type="button" id="animationIdleOnButton">ON</button>
+          <button type="button" id="animationIdleOffButton">OFF</button><br><br>
+          <b>Animation Speed</b> <input type="range" min="1" max="3" value="1" class="slider" id="speedSlide"><br><br>
+  
+          
+          <b>Visible Moon</b> <button type="button" id="ballOn">On</button> <button type="button" id="ballOff">Off</button><br> <br>
+          <b>Shift+Click</b> to make him roll the moon!
+          <br>(The animation is cooler if you enable the moon)
+          <br>Shift Click again to disable the animation<br><br> 
+  
+          <b>Camera Controls</b>
+          <button type="button" id="resetCamButton">Reset Camera</button><br>
+          X Angle <input type="range" min="0" max="360" value="0" class="slider" id="xAngleSlide"><br>
+          Y Angle <input type="range" min="0" max="360" value="0" class="slider" id="yAngleSlide"><br>
+          Z Angle <input type="range" min="0" max="360" value="0" class="slider" id="zAngleSlide"><br>
+          Size <input type="range" min="10" max="100" value="100" class="slider" id="sizeSlide"><br><br>
+  
+          Character model <b>(The Prince)</b> from the game <i>Katamari Damacy</i><br>
+      </div>
+      
+        <div id="right">
+          <b>Head</b> <br> X <input type="range" min="-45" max="45" value="0" class="slider" id="headXSlide"> 
+          Y <input type="range" min="-45" max="45" value="0" class="slider" id="headYSlide">
+          Z <input type="range" min="-45" max="45" value="0" class="slider" id="headZSlide">
+          
+          <br>
+
+          <b>Body</b> <br> X <input type="range" min="-45" max="45" value="0" class="slider" id="bodyXSlide">
+          Y <input type="range" min="-45" max="45" value="0" class="slider" id="bodyYSlide">
+          Z <input type="range" min="-45" max="45" value="0" class="slider" id="bodyZSlide">
+          <br>
+
+          <b>Pelvis</b> <br> X <input type="range" min="-45" max="45" value="0" class="slider" id="pelvisSlide"><br>
+
+          
+          <br>
+          <b>Right Arm</b> <br> 
+          X <input type="range" min="-45" max="45" value="0" class="slider" id="LeftArmXSlide">
+          Y <input type="range" min="-45" max="45" value="0" class="slider" id="LeftArmYSlide">
+          Z <input type="range" min="-45" max="45" value="0" class="slider" id="LeftArmZSlide">
+          <br>
+          <b>Right Forearm</b> <br> 
+          X <input type="range" min="-45" max="45" value="0" class="slider" id="LeftForeArmXSlide">
+          Y <input type="range" min="-45" max="45" value="0" class="slider" id="LeftForeArmYSlide">
+          Z <input type="range" min="-45" max="45" value="0" class="slider" id="LeftForeArmZSlide">
+          <br>
+          <b>Right Forearm</b><br> 
+          X <input type="range" min="-45" max="45" value="0" class="slider" id="RightHandXSlide">
+          Y <input type="range" min="-45" max="45" value="0" class="slider" id="RightHandYSlide">
+          Z <input type="range" min="-45" max="45" value="0" class="slider" id="RightHandZSlide">
+          <br><br>
+
+          <b>Left Arm</b> <br> 
+          X <input type="range" min="-45" max="45" value="0" class="slider" id="RightArmXSlide">
+          Y <input type="range" min="-45" max="45" value="0" class="slider" id="RightArmYSlide">
+          Z <input type="range" min="-45" max="45" value="0" class="slider" id="RightArmZSlide">
+          <br>
+          
+          <b>Left Forearm</b> <br> 
+          X <input type="range" min="-45" max="45" value="0" class="slider" id="RightForeArmXSlide">
+          Y <input type="range" min="-45" max="45" value="0" class="slider" id="RightForeArmYSlide">
+          Z <input type="range" min="-45" max="45" value="0" class="slider" id="RightForeArmZSlide">
+          <br>
+          <b>Left Hand</b><br> 
+          X <input type="range" min="-45" max="45" value="0" class="slider" id="LeftHandXSlide">
+          Y <input type="range" min="-45" max="45" value="0" class="slider" id="LeftHandYSlide">
+          Z <input type="range" min="-45" max="45" value="0" class="slider" id="LeftHandZSlide">
+          <br><br>
+          
+          <b>Right Upper Leg</b> <br> 
+          X <input type="range" min="-45" max="45" value="0" class="slider" id="rightLegXSlide">
+          Y <input type="range" min="-45" max="45" value="0" class="slider" id="rightLegYSlide">
+          Z <input type="range" min="-45" max="45" value="0" class="slider" id="rightLegZSlide">
+          <br>
+          <b>Right Lower Leg</b> <br> 
+          X <input type="range" min="-45" max="45" value="0" class="slider" id="rightCalfXSlide">
+          Y <input type="range" min="-45" max="45" value="0" class="slider" id="rightCalfYSlide">
+          Z <input type="range" min="-45" max="45" value="0" class="slider" id="rightCalfZSlide">
+          <br>
+          <b>Right Foot</b> <br> 
+          X <input type="range" min="-45" max="45" value="0" class="slider" id="rightFootXSlide">
+          Y <input type="range" min="-45" max="45" value="0" class="slider" id="rightFootYSlide">
+          Z <input type="range" min="-45" max="45" value="0" class="slider" id="rightFootZSlide">
+          <br><br>
+
+          <b>Left Upper Leg</b> <br> 
+          X <input type="range" min="-45" max="45" value="0" class="slider" id="LeftLegXSlide">
+          Y <input type="range" min="-45" max="45" value="0" class="slider" id="LeftLegYSlide">
+          Z <input type="range" min="-45" max="45" value="0" class="slider" id="LeftLegZSlide">
+          <br>
+          <b>Left Lower Leg</b> <br> 
+          X <input type="range" min="-45" max="45" value="0" class="slider" id="LeftCalfXSlide">
+          Y <input type="range" min="-45" max="45" value="0" class="slider" id="LeftCalfYSlide">
+          Z <input type="range" min="-45" max="45" value="0" class="slider" id="LeftCalfZSlide">
+          <br>
+          <b>Left Foot</b> <br> 
+          X <input type="range" min="-45" max="45" value="0" class="slider" id="leftFootXSlide">
+          Y <input type="range" min="-45" max="45" value="0" class="slider" id="leftFootYSlide">
+          Z <input type="range" min="-45" max="45" value="0" class="slider" id="leftFootZSlide">
+          <br><br>
+
+          <button type="button" id="resetButton">Reset all parts</button><br>
+        </div>
+    </div>
+
+    <script src="../lib/webgl-utils.js"></script>
+    <script src="../lib/webgl-debug.js"></script>
+    <script src="../lib/cuon-utils.js"></script>
+    <script src="../lib/cuon-matrix.js"></script>
+    <script src="Triangle.js"></script>
+    <script src="Cube.js"></script>
+    <script src="Cone.js"></script>
+    <script src="Nose.js"></script>
+    <script src="Sphere.js"></script>
+    <script src="Cylinder.js"></script>
+    <script src="Face.js"></script>
+    <script src="Anchor.js"></script>
+    <script src="Pelvis.js"></script>
+    <script src="Katamari.js"></script>
+    <script src="Reset.js"></script>
+    <script src="BlockyAnimal.js"></script>
+
+  </body>
+</html>
