@@ -12,6 +12,7 @@ Web Application to draw on a canvas with different shapes, color, and sizes. A b
 ![asg1](https://i.gyazo.com/add6828410bb33fddbb54079f4e72a82.png)
 ## [asg2](https://people.ucsc.edu/~jrgu/asg2/blockyAnimal/BlockyAnimal.html)
 A blocky animal to transform 2D and 3D geometric shapes and objects using matrices in WebGL. Animal has various limbs to move around and is animated.
+[Voted one of the best blocky animal by peers and displayed in a hall of fame.](https://i.gyazo.com/ca86f55b90e5a942a03100e09c0edbf3.png)
 
 ![asg2](https://i.gyazo.com/44f915101877afc6e4293d7933e21043.png)
 ## [asg3](https://people.ucsc.edu/~jrgu/asg3/world/World.html)
